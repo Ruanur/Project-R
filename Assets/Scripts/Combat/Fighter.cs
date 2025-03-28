@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour
+    public class Fighter : MonoBehaviour, IAction
     {
         //몬스터 기준으로 몇 반경 외로 이동할 지
         [SerializeField] float weaponRange = 2f;
@@ -21,7 +21,7 @@ namespace RPG.Combat
             }
             else
             {
-                GetComponent<Mover>().Stop();
+                GetComponent<Mover>().Cancel();
             }
         }
 
