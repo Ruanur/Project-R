@@ -38,14 +38,21 @@ namespace RPG.Combat
             if (timeSinceLastAttack > timeBetweenAttacks)
             {
                 //Hit() 이벤트 트리거
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0;
             }
+        }
+
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
         }
 
         //애니메이션 이벤트
         void Hit()
         {
+            if (target == null) { return; }
             target.TakeDamage(weaponDamage);
         }
 
@@ -69,11 +76,16 @@ namespace RPG.Combat
 
         public void Cancel()
         {
-            //움직임이 감지되면 공격 애니메이션을 멈춤
-            GetComponent<Animator>().SetTrigger("stopAttack");
+            StopAttack();
             target = null;
         }
-        
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("Attack");
+            //움직임이 감지되면 공격 애니메이션을 멈춤
+            GetComponent<Animator>().SetTrigger("stopAttack");
+        }
 
     }
 }
