@@ -61,14 +61,14 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null) { return false; }
             Health targetToTest = combatTarget.GetComponent<Health>();
             return targetToTest != null && !targetToTest.IsDead();
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
@@ -82,7 +82,7 @@ namespace RPG.Combat
 
         private void StopAttack()
         {
-            GetComponent<Animator>().ResetTrigger("Attack");
+            GetComponent<Animator>().ResetTrigger("attack");
             //움직임이 감지되면 공격 애니메이션을 멈춤
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
