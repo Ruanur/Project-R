@@ -62,6 +62,7 @@ namespace RPG.Movement
             return new SerializableVector3(transform.position);
         }
 
+        //마지막으로 저장한 위치 로드
         public void RestoreState(object state)
         {
             SerializableVector3 position = (SerializableVector3)state;
