@@ -319,6 +319,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 643097150}
+    - target: {fileID: 7909845166499705157, guid: 179f0f117d579a044a6347f87236d968,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: a29008c3-8d94-4623-9496-3d80ec8eea20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179f0f117d579a044a6347f87236d968, type: 3}
 --- !u!1 &246960799
@@ -1063,6 +1068,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
+    - target: {fileID: 7909845166499705157, guid: 179f0f117d579a044a6347f87236d968,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 191d3bb6-67e3-4dbd-bb81-ac94c2f58d0a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179f0f117d579a044a6347f87236d968, type: 3}
 --- !u!4 &948472904 stripped
@@ -1475,6 +1485,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 643097150}
+    - target: {fileID: 7909845166499705157, guid: 179f0f117d579a044a6347f87236d968,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 2ea131cf-beb8-40e3-afb6-38bed05df741
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179f0f117d579a044a6347f87236d968, type: 3}
 --- !u!1 &1323555464
@@ -1878,6 +1893,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 581338592}
+    - target: {fileID: 7909845166499705157, guid: 179f0f117d579a044a6347f87236d968,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: e192359e-b056-4eed-8e97-5722ef66e87a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179f0f117d579a044a6347f87236d968, type: 3}
 --- !u!1 &1645933810
@@ -2475,6 +2495,11 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 841167696}
+    - target: {fileID: 7909845166499705157, guid: 179f0f117d579a044a6347f87236d968,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: 64059abb-5bc9-4e3f-8546-ce442340b48e
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 179f0f117d579a044a6347f87236d968, type: 3}
 --- !u!4 &2133597148 stripped
@@ -2549,6 +2574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8892343643104400373, guid: dc57f8891aef98d47b346596583fd9f2,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: ca249f0f-1da7-4594-b0a6-bb6f18630cd5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc57f8891aef98d47b346596583fd9f2, type: 3}
