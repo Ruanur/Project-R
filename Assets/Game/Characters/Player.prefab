@@ -112,6 +112,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3f6fc0cf5e5d31c458bc74ede87cb8ae, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 679ff741e12a7e740819ede24a7000b7, type: 3}
+--- !u!4 &1150541790666993709 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 461188, guid: 679ff741e12a7e740819ede24a7000b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1150541790667192745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9144137086283837004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -184,14 +190,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574265448, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4709522133363002821, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 4887526088529881224, guid: 606e940e8abefe942b8517cfc71b363c,
+        type: 3}
+    - target: {fileID: 4709522133363002821, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 1150541790666993709}
     - target: {fileID: 1544852147487074976, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
         type: 3}
       propertyPath: uniqueIdentifier
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 574265448, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
