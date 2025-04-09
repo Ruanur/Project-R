@@ -12,8 +12,8 @@ namespace RPG.Combat
 
 
         //무장 위치
-        [SerializeField] Transform handTransform = null;
-
+        [SerializeField] Transform RightHandTransform = null;
+        [SerializeField] Transform LeftHandTransform = null;
         [SerializeField] Weapon defaultweapon = null;
 
         Health target;
@@ -48,7 +48,7 @@ namespace RPG.Combat
         {
             currentWeapon = weapon;
             Animator animator = GetComponent<Animator>();
-            weapon.Spawn(handTransform, animator);
+            weapon.Spawn(RightHandTransform, LeftHandTransform, animator);
         }
 
         private void AttackBehavior()
