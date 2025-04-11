@@ -1,11 +1,12 @@
 ﻿using RPG.Core;
 using RPG.Movement;
+using RPG.Saving;
 using System;
 using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction
+    public class Fighter : MonoBehaviour, IAction, ISaveable
     {
         //몬스터 기준으로 몇 반경 외로 이동할 지
         [SerializeField] float timeBetweenAttacks = 1f;
@@ -15,9 +16,6 @@ namespace RPG.Combat
         [SerializeField] Transform RightHandTransform = null;
         [SerializeField] Transform LeftHandTransform = null;
         [SerializeField] Weapon defaultweapon = null;
-        //장비를 이름으로 저장하고 불러오기, 동일한 이름이 있을 경우 위험 요소가 있음
-        //uuid로 저장하고 불러오게 구현 예정
-        [SerializeField] string defaultweaponName = "Unarmed";
 
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
@@ -25,8 +23,10 @@ namespace RPG.Combat
 
         private void Start()
         {
-            Weapon weapon = Resources.Load<Weapon>(defaultweaponName);
-            EquipWeapon(weapon);
+            if (currentWeapon == null)
+            {
+                EquipWeapon(defaultweapon);
+            }
         }
 
 
@@ -124,5 +124,16 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
+        public object CaptureState()
+        {
+            return currentWeapon.name;
+        }
+
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state;
+            Weapon weapon = Resources.Load<Weapon>(weaponName);
+            EquipWeapon(weapon);
+        }
     }
 }
