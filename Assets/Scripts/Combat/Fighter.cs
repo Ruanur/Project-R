@@ -15,6 +15,9 @@ namespace RPG.Combat
         [SerializeField] Transform RightHandTransform = null;
         [SerializeField] Transform LeftHandTransform = null;
         [SerializeField] Weapon defaultweapon = null;
+        //장비를 이름으로 저장하고 불러오기, 동일한 이름이 있을 경우 위험 요소가 있음
+        //uuid로 저장하고 불러오게 구현 예정
+        [SerializeField] string defaultweaponName = "Unarmed";
 
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
@@ -22,7 +25,8 @@ namespace RPG.Combat
 
         private void Start()
         {
-            EquipWeapon(defaultweapon);
+            Weapon weapon = Resources.Load<Weapon>(defaultweaponName);
+            EquipWeapon(weapon);
         }
 
 
