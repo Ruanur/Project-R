@@ -196,6 +196,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: CharacterClass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: startinglevel
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4709522133363002821, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
         type: 3}
       propertyPath: weaponPrefab
@@ -253,11 +263,6 @@ PrefabInstance:
     - target: {fileID: 574265448, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
-        type: 3}
-      propertyPath: CharacterClass
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
