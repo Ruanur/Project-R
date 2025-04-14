@@ -29,7 +29,7 @@ namespace RPG.Combat
             var overrideController = animator.runtimeAnimatorController as AnimatorOverrideController;
             if (animatorOverride != null)
             {
-                animator.runtimeAnimatorController = animatorOverride.runtimeAnimatorController;
+                animator.runtimeAnimatorController = animatorOverride;
             }
             else if(overrideController != null)
             {        

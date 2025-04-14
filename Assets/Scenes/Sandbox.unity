@@ -203,7 +203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140394548}
-  m_LocalRotation: {x: 0.07855651, y: -0.7668715, z: 0.09566112, w: 0.6297507}
+  m_LocalRotation: {x: 0.07855651, y: -0.7668716, z: 0.09566113, w: 0.62975067}
   m_LocalPosition: {x: -19.644176, y: 0, z: -28.202692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2421,7 +2421,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669792300}
-  m_LocalRotation: {x: -0.012612169, y: 0.9373879, z: -0.03413144, w: -0.34638137}
+  m_LocalRotation: {x: -0.012612168, y: 0.9373879, z: -0.034131438, w: -0.34638137}
   m_LocalPosition: {x: -40.394176, y: -2.4268875, z: -40.552692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3131,7 +3131,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultweapon
       value: 
-      objectReference: {fileID: 11400000, guid: 13bb73ee1ea0334428582af6f4020762,
+      objectReference: {fileID: 11400000, guid: 22b42f1a184ee2846be37b41d98802f1,
         type: 2}
     - target: {fileID: 1220785023459443315, guid: dc57f8891aef98d47b346596583fd9f2,
         type: 3}
