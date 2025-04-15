@@ -1,9 +1,8 @@
-﻿using RPG.Attribute;
-using System;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RPG.Attributes
+namespace RPG.Stats
 {
     public class ExpDisplay : MonoBehaviour
     {

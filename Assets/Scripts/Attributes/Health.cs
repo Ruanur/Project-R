@@ -1,5 +1,4 @@
-﻿using RPG.Attribute;
-using RPG.Core;
+﻿using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
 using System;
