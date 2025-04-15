@@ -8,13 +8,16 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        [SerializeField] float healthPoint = 100f;
+        float healthPoint = -1f;
 
         bool isDead = false;
 
         private void Start()
         {
-            healthPoint = GetComponent<BaseStats>().GetStat(Stat.Health);
+            if (healthPoint < 0)
+            {
+                healthPoint = GetComponent<BaseStats>().GetStat(Stat.Health);
+            }
         }
 
         public bool IsDead()
