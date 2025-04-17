@@ -1,7 +1,5 @@
 ﻿using RPG.Saving;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Stats
@@ -10,7 +8,7 @@ namespace RPG.Stats
     {
         [SerializeField] float experiencePoints = 0f;
 
-        //public delegate void ExperienceGainedDelegate();
+        //public delegate void ExampleGainedDelegate();
         public event Action onExperienceGained;
 
         public void GainExperience(float experience)
@@ -19,21 +17,22 @@ namespace RPG.Stats
             onExperienceGained();
         }
 
-        public float GetPoint()
+        public float GetPoints()
         {
             return experiencePoints;
         }
 
-        //현재 경험치 저장, ISaveable 인터페이스
         public object CaptureState()
         {
             return experiencePoints;
         }
 
+
         public void RestoreState(object state)
         {
             experiencePoints = (float)state;
         }
+
     }
 
 }

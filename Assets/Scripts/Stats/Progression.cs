@@ -16,6 +16,7 @@ namespace RPG.Stats
         {
             BuildLookup();
 
+
             float[] levels = lookupTable[characterClass][stat];
 
             if (levels.Length < level)
@@ -24,7 +25,6 @@ namespace RPG.Stats
             }
 
             return levels[level - 1];
-
             //foreach (ProgressionCharacterClass progressionClass in characterClasses)
             //{
             //    if (progressionClass.characterClass != characterClass) continue;
@@ -43,26 +43,28 @@ namespace RPG.Stats
 
         public int GetLevels(Stat stat, CharacterClass characterClass)
         {
+            BuildLookup();
+
             float[] levels = lookupTable[characterClass][stat];
             return levels.Length;
         }
 
         private void BuildLookup()
         {
-            if (lookupTable != null) { return; }
+            if (lookupTable != null) return;
 
-            lookupTable = new Dictionary<CharacterClass, Dictionary<Stat, float[]>>();
+            lookupTable = new Dictionary<CharacterClass, Dictionary<Stat, float[]>>(); 
 
             foreach (ProgressionCharacterClass progressionClass in characterClasses)
             {
-                var statLockupTable = new Dictionary<Stat, float[]>();
+                var statLookupTable = new Dictionary<Stat, float[]>();
 
                 foreach (ProgressionStat progressionStat in progressionClass.stats)
                 {
-                    statLockupTable[progressionStat.stat] = progressionStat.levels;
+                    statLookupTable[progressionStat.stat] = progressionStat.levels;
                 }
 
-                lookupTable[progressionClass.characterClass] = statLockupTable;
+                lookupTable[progressionClass.characterClass] = statLookupTable;
             }
         }
 

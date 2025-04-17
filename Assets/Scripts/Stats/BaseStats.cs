@@ -1,5 +1,4 @@
-﻿using RPG.Stats;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RPG.Stats
 {
@@ -7,7 +6,7 @@ namespace RPG.Stats
     {
         [Range(1,99)]
         [SerializeField] int startinglevel = 1;
-        [SerializeField] CharacterClass CharacterClass;
+        [SerializeField] CharacterClass characterClass;
         [SerializeField] Progression progression = null;
 
         int currentLevel = 0;
@@ -28,13 +27,13 @@ namespace RPG.Stats
             if (newLevel > currentLevel)
             {
                 currentLevel = newLevel;
-                Debug.Log("레벨 업");
+                print("레벨 업");
             }
         }
 
         public float GetStat(Stat stat)
         {
-            return progression.GetStat(stat, CharacterClass, GetLevel());
+            return progression.GetStat(stat, characterClass, GetLevel());
         }
 
         public int GetLevel()
@@ -49,13 +48,14 @@ namespace RPG.Stats
         public int CalculateLevel()
         {
             Experience experience = GetComponent<Experience>();
+
             if (experience == null) return startinglevel;
 
-            float currentXP = experience.GetPoint();
-            int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, CharacterClass);
-            for (int level = 1; level < penultimateLevel; level++)
+            float currentXP = experience.GetPoints();
+            int penultimateLevel = progression.GetLevels(Stat.ExperienceToLevelUp, characterClass);
+            for (int level = 1; level <= penultimateLevel; level++)
             {
-                float XPToLevelUp = progression.GetStat(Stat.ExperienceToLevelUp, CharacterClass, level);
+                float XPToLevelUp = progression.GetStat(Stat.ExperienceToLevelUp, characterClass, level);
                 if (XPToLevelUp > currentXP)
                 {
                     return level;

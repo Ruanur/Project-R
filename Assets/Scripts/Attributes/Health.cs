@@ -8,7 +8,7 @@ namespace RPG.Attributes
 {
     public class Health : MonoBehaviour, ISaveable
     {
-        float healthPoint = -1f;
+        float healthPoint = -1;
 
         bool isDead = false;
 
@@ -35,6 +35,7 @@ namespace RPG.Attributes
             }
         }
 
+        //체력 퍼센테이지
         public float GetPercentage()
         {
             return 100 * (healthPoint / GetComponent<BaseStats>().GetStat(Stat.Health));
