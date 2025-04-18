@@ -31,12 +31,24 @@ namespace RPG.Attributes
 
         public void TakeDamage(GameObject instigator, float damage)
         {
+            Debug.Log(gameObject.name + "피해량 " + damage);
+
             healthPoint = Mathf.Max(healthPoint - damage, 0);
             if (healthPoint == 0)
             {
                 Die();
                 AwardExperience(instigator);
             }
+        }
+
+        public float GetHealthPoints()
+        {
+            return healthPoint;
+        }
+
+        public float GetMaxHealthPoints()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         //체력 퍼센테이지
