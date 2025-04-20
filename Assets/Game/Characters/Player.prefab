@@ -26,6 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42b022f854a20d48944110666cbb128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerationPercentage: 70
 --- !u!114 &317380999637118714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +225,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6656832296423280412, guid: d688e2934da8a9040b833bb0ccc3d4cc,
         type: 3}
+    - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: shouldUseModifiers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4709522133363002821, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
         type: 3}
       propertyPath: weaponPrefab
