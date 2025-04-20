@@ -1297,16 +1297,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5012997787841544396, guid: 179f0f117d579a044a6347f87236d968,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
     - target: {fileID: 7909845166499705157, guid: 179f0f117d579a044a6347f87236d968,
         type: 3}
       propertyPath: uniqueIdentifier
       value: 191d3bb6-67e3-4dbd-bb81-ac94c2f58d0a
       objectReference: {fileID: 0}
+    - target: {fileID: 5012997787841544396, guid: 179f0f117d579a044a6347f87236d968,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01b2546c969fe814794af634cb4534f4, type: 2}
     - target: {fileID: 7877803272513378141, guid: 179f0f117d579a044a6347f87236d968,
         type: 3}
       propertyPath: healthPoint

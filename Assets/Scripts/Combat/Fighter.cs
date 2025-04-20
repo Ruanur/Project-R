@@ -4,11 +4,12 @@ using RPG.Movement;
 using RPG.Saving;
 using RPG.Stats;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour, IAction, ISaveable
+    public class Fighter : MonoBehaviour, IAction, ISaveable, IModifierProvider
     {
         //몬스터 기준으로 몇 반경 외로 이동할 지
         [SerializeField] float timeBetweenAttacks = 1f;
@@ -133,6 +134,14 @@ namespace RPG.Combat
             GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
+        public IEnumerable<float> GetAdditiveModifier(Stat stat)
+        {
+            if (stat == Stat.Damage)
+            {
+                yield return currentWeapon.GetDamage();
+            }
+        }
+
         public object CaptureState()
         {
             return currentWeapon.name;
@@ -144,5 +153,7 @@ namespace RPG.Combat
             Weapon weapon = UnityEngine.Resources.Load<Weapon>(weaponName);
             EquipWeapon(weapon);
         }
+
+
     }
 }
