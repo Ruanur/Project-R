@@ -1,6 +1,7 @@
 ﻿using RPG.Core;
 using RPG.Saving;
 using RPG.Stats;
+using RPG.Utils;
 using System;
 using UnityEngine;
 
@@ -10,16 +11,23 @@ namespace RPG.Attributes
     {
         [SerializeField] float regenerationPercentage = 70f;
 
-        float healthPoint = -1;
+        LazyValue<float> healthPoints;
 
         bool isDead = false;
 
+        private void Awake()
+        {
+            healthPoints = new LazyValue<float>(GetInitialHealth);
+        }
+
+        private float GetInitialHealth()
+        {
+            return GetComponent<BaseStats>().GetStat(Stat.Health);
+        }
+
         private void Start()
         {
-            if (healthPoint < 0)
-            {
-                healthPoint = GetComponent<BaseStats>().GetStat(Stat.Health);
-            }
+            healthPoints.ForceInit();
         }
 
         private void OnEnable()
@@ -41,8 +49,8 @@ namespace RPG.Attributes
         {
             Debug.Log(gameObject.name + "피해량 " + damage);
 
-            healthPoint = Mathf.Max(healthPoint - damage, 0);
-            if (healthPoint == 0)
+            healthPoints.value = Mathf.Max(healthPoints.value - damage, 0);
+            if (healthPoints.value == 0)
             {
                 Die();
                 AwardExperience(instigator);
@@ -51,7 +59,7 @@ namespace RPG.Attributes
 
         public float GetHealthPoints()
         {
-            return healthPoint;
+            return healthPoints.value;
         }
 
         public float GetMaxHealthPoints()
@@ -62,7 +70,7 @@ namespace RPG.Attributes
         //체력 퍼센테이지
         public float GetPercentage()
         {
-            return 100 * (healthPoint / GetComponent<BaseStats>().GetStat(Stat.Health));
+            return 100 * (healthPoints.value / GetComponent<BaseStats>().GetStat(Stat.Health));
         }
 
         private void Die()
@@ -85,19 +93,19 @@ namespace RPG.Attributes
         private void RegenerateHealth()
         {
             float regenHealthPoints = GetComponent<BaseStats>().GetStat(Stat.Health) * (regenerationPercentage / 100);
-            healthPoint = Mathf.Max(healthPoint, regenHealthPoints);
+            healthPoints.value = Mathf.Max(healthPoints.value, regenHealthPoints);
         }
 
         public object CaptureState()
         {
-            return healthPoint;
+            return healthPoints.value;
         }
 
         //마지막으로 저장된 체력 불러오기
         public void RestoreState(object state)
         {
-            healthPoint = (float)state;
-            if (healthPoint == 0)
+            healthPoints.value = (float)state;
+            if (healthPoints.value == 0)
             {
                 Die();
             }
