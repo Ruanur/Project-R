@@ -203,7 +203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140394548}
-  m_LocalRotation: {x: 0.07855651, y: -0.7668715, z: 0.09566112, w: 0.6297507}
+  m_LocalRotation: {x: 0.07855651, y: -0.7668716, z: 0.09566113, w: 0.62975067}
   m_LocalPosition: {x: -19.644176, y: 0, z: -28.202692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1431,7 +1431,7 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultweapon
       value: 
-      objectReference: {fileID: 11400000, guid: a143c132621a4aa4bbdfeb40f90ae8d7,
+      objectReference: {fileID: 11400000, guid: 426baf61798014c45a1ea586f5174d53,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 204f9ca2d9c4b594fadf3da3e092f948, type: 3}
@@ -2407,7 +2407,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669792300}
-  m_LocalRotation: {x: -0.012612168, y: 0.9373879, z: -0.034131438, w: -0.34638137}
+  m_LocalRotation: {x: -0.012612169, y: 0.9373879, z: -0.03413144, w: -0.34638137}
   m_LocalPosition: {x: -40.394176, y: -2.4268875, z: -40.552692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
