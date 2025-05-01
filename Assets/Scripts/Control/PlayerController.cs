@@ -11,14 +11,7 @@ namespace RPG.Control
     {
         Health health;
 
-        //커서 타입 enum, SetCursor
-        enum CursorType
-        {
-            None,
-            Movement,
-            Combat,
-            UI
-        }
+
 
         //커서 텍스트 설정
         [System.Serializable]
@@ -71,7 +64,7 @@ namespace RPG.Control
                 {
                     if (raycastable.HandleRaycast(this))
                     {
-                        SetCurser(CursorType.Combat);
+                        SetCurser(raycastable.GetCursorType());
                         return true;
                     }
                 }
