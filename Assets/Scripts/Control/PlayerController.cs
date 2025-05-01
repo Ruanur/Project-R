@@ -3,6 +3,7 @@ using RPG.Combat;
 using RPG.Movement;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace RPG.Control
 {
@@ -15,9 +16,11 @@ namespace RPG.Control
         {
             None,
             Movement,
-            Combat
+            Combat,
+            UI
         }
 
+        //커서 텍스트 설정
         [System.Serializable]
         struct CursorMapping
         {
@@ -35,12 +38,27 @@ namespace RPG.Control
 
         private void Update()
         {
-            if (health.IsDead()) { return; }
+            if (InteractWithUI()) return;
+            if (health.IsDead())
+            {
+                SetCurser(CursorType.None);
+                return;
+            }
 
             if (InteractWithCombat()) return;
             if (InteractWithMovement()) return;
 
             SetCurser(CursorType.None);
+        }
+
+        private bool InteractWithUI()
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                SetCurser(CursorType.UI);
+                return true;
+            }
+            return false;
         }
 
         private bool InteractWithCombat()
