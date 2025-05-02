@@ -3,6 +3,7 @@ using RPG.Combat;
 using RPG.Movement;
 using System;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.EventSystems;
 
 namespace RPG.Control
@@ -23,6 +24,7 @@ namespace RPG.Control
         }
 
         [SerializeField] CursorMapping[] cursorMappings = null;
+        [SerializeField] float maxNavMeshProjectionDistance = 1f;
 
         private void Awake()
         {
@@ -87,20 +89,39 @@ namespace RPG.Control
 
         private bool InteractWithMovement()
         {
-            RaycastHit hit;
-            bool hasHit = Physics.Raycast(GetMouseRay(), out hit); //out?
+            Vector3 target;
+            bool hasHit = RaycastNavMesh(out target);
 
             if (hasHit)
             {
                 if (Input.GetMouseButton(1))
                 {
-                    GetComponent<Mover>().StartMoveAction(hit.point, 1f);
+                    GetComponent<Mover>().StartMoveAction(target, 1f);
                 }
                 //이동 가능 경로 커서 표시
                 SetCurser(CursorType.Movement);
                 return true;
             }
             return false;
+        }
+
+        private bool RaycastNavMesh(out Vector3 target)
+        {
+            target = new Vector3();
+            RaycastHit hit;
+            bool hasHit = Physics.Raycast(GetMouseRay(), out hit); //out?
+
+            if (!hasHit) return false;
+            // Find nearest navmesh point
+            NavMeshHit navMeshHit;
+            bool hasCastToNavMesh = NavMesh.SamplePosition(
+                hit.point, out navMeshHit, maxNavMeshProjectionDistance, NavMesh.AllAreas);
+
+            if (!hasCastToNavMesh) return false;
+            // return true if found
+
+            target = navMeshHit.position;
+            return true;
         }
 
         private void SetCurser(CursorType type)
