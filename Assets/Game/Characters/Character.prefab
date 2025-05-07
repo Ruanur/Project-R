@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 1544852147487074976}
   - component: {fileID: 3685659265712658863}
   - component: {fileID: 5860500606507880705}
+  - component: {fileID: 7696884603022748864}
+  - component: {fileID: 2034390708860761759}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -193,6 +195,47 @@ MonoBehaviour:
   progression: {fileID: 11400000, guid: 80aee6452335d1f4494c9262bdd57201, type: 2}
   levelUpParticleEffect: {fileID: 0}
   shouldUseModifiers: 0
+--- !u!114 &7696884603022748864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075216652884720916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cec47ccc54601f428fdc34695bb4a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2034390708860761759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075216652884720916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42b022f854a20d48944110666cbb128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regenerationPercentage: 70
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8852315857612324088}
+        m_MethodName: Spawn
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 13
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &2115745807748288676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,3 +311,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2115745807748288676}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8852315857612324088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7459401088904588380, guid: af6978d591ce8284f9680f8d0b66895d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2115745807748288676}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf774d3f32fc8442ac34fbb75a7b80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
