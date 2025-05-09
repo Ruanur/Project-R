@@ -19,18 +19,18 @@ namespace RPG.Combat
         //무장 위치
         [SerializeField] Transform RightHandTransform = null;
         [SerializeField] Transform LeftHandTransform = null;
-        [SerializeField] Weapon defaultweapon = null;
+        [SerializeField] WeaponConfig defaultweapon = null;
 
         Health target;
         float timeSinceLastAttack = Mathf.Infinity;
-        LazyValue<Weapon> currentWeapon;
+        LazyValue<WeaponConfig> currentWeapon;
 
         private void Awake()
         {
-            currentWeapon = new LazyValue<Weapon>(SetupDefaultWeapon);
+            currentWeapon = new LazyValue<WeaponConfig>(SetupDefaultWeapon);
         }
 
-        private Weapon SetupDefaultWeapon()
+        private WeaponConfig SetupDefaultWeapon()
         {
             AttachWeapon(defaultweapon);
             return defaultweapon;
@@ -60,13 +60,13 @@ namespace RPG.Combat
             }
         }
 
-        public void EquipWeapon(Weapon weapon)
+        public void EquipWeapon(WeaponConfig weapon)
         {
             currentWeapon.value = weapon;
             AttachWeapon(weapon);
         }
 
-        private void AttachWeapon(Weapon weapon)
+        private void AttachWeapon(WeaponConfig weapon)
         {
             Animator animator = GetComponent<Animator>();
             weapon.Spawn(RightHandTransform, LeftHandTransform, animator);
@@ -172,7 +172,7 @@ namespace RPG.Combat
         public void RestoreState(object state)
         {
             string weaponName = (string)state;
-            Weapon weapon = UnityEngine.Resources.Load<Weapon>(weaponName);
+            WeaponConfig weapon = UnityEngine.Resources.Load<WeaponConfig>(weaponName);
             EquipWeapon(weapon);
         }
     }
