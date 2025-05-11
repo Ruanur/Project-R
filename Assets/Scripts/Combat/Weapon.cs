@@ -8,7 +8,7 @@ namespace RPG.Combat
     {
         public void OnHit()
         {
-
+            print("장착중인 무기 : " + gameObject.name);
         }
     }
 }
