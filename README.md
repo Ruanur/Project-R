@@ -36,12 +36,12 @@ Annihilation은 플레이어가 마을을 침략해 모든 경비병들을 처�
 For building and running the application you need:
 
 - [Unity Editor](https://public-cdn.cloud.unity3d.com/hub/prod/UnityHubSetup.exe)
-- [Unity 2022.2.12f1](https://unity.com/kr/releases/editor/archive)
+- [Unity 2018.3.14f1](https://unity.com/kr/releases/editor/archive)
 
 ### Installation
 ``` bash
-$ git clone https://github.com/Ruanur/Project-Game.git
-$ cd Master-Kitchen
+$ git clone https://github.com/Ruanur/Project-R.git
+$ cd Annihilation
 ```
 
 ---
