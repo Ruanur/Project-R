@@ -18,7 +18,7 @@
 
 |      민경진       |                                                                                                                 
 | :------------------------------------------------------------------------------: | 
-|   <img width="200px" src="https://github.com/user-attachments/assets/3c97d6ba-902b-4607-a309-34ea32b5cf05" />    | 
+|   <img width="200px" src="https://github.com/user-attachments/assets/c186ef9f-20ea-4154-a7d5-186af7dd9dc1" />    | 
 |   [@Ruanur](https://github.com/Ruanur)   | 
 
 ## 프로젝트 소개
