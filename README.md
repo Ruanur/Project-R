@@ -1,7 +1,7 @@
 # Annihilation
 
 <div align="center">
-<img width="820" alt="image" src="https://github.com/user-attachments/assets/cbd53e91-7280-4748-975e-3b099b771d3f">
+<img width="820" alt="image" src="https://github.com/user-attachments/assets/406eddb3-8d40-48f0-bc44-c2b078068f56">
 
 
 </div>
