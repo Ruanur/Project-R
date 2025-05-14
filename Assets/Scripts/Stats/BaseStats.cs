@@ -30,6 +30,16 @@ namespace RPG.Stats
             currentLevel.ForceInit();
         }
 
+        //개발자 테스트, 강제 레벨업
+        //정식 빌드 시 주석 처리 필수
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                currentLevel.value += 1;
+            }
+        }
+
         private void OnEnable()
         {
             if (experience != null)
