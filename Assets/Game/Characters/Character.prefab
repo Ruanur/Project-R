@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 5860500606507880705}
   - component: {fileID: 7696884603022748864}
   - component: {fileID: 2034390708860761759}
+  - component: {fileID: 468317119384662259}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -261,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   maxSpeed: 6
+  maxNavPathLength: 40
 --- !u!114 &4709522133363002821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,6 +393,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &468317119384662259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075216652884720916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e10541f1d83f44e82bcfc4d8f9caf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5368634149025291067
 GameObject:
   m_ObjectHideFlags: 0

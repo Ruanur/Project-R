@@ -36,6 +36,8 @@ namespace RPG.Attributes
         private void Start()
         {
             healthPoints.ForceInit();
+            //타겟 레벨 변동 시 체력이 차지 않는 버그 수정, 게임 시작 시 체력을 모두 채움
+            healthPoints.value = GetMaxHealthPoints();
         }
 
         private void OnEnable()
@@ -63,6 +65,7 @@ namespace RPG.Attributes
                 //UnityEvent 호출, 사망 사운드 
                 onDie.Invoke();
                 Die();
+                //경험치 보상
                 AwardExperience(instigator);
             }
             else
@@ -105,6 +108,11 @@ namespace RPG.Attributes
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
             GetComponent<ActionScheduler>().CancelCurrentAction();
+            //경비병 사망시 오브젝트가 남아있는 버그 발견, 플레이어를 제외한 개체가 사망 시 오브젝트 삭제 
+            if (!gameObject.CompareTag("Player"))
+            {
+                Destroy(gameObject, 1f);
+            }
         }
 
         private void AwardExperience(GameObject instigator)

@@ -27,6 +27,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenerationPercentage: 70
+  takeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RPG.Attributes.Health+TakeDamageEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &317380999637118714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,6 +65,8 @@ MonoBehaviour:
   - type: 4
     texture: {fileID: 2800000, guid: f8c873f1e53e83f4aabf342d6be1dfc3, type: 3}
     hotspot: {x: 0, y: 0}
+  maxNavMeshProjectionDistance: 1
+  raycastRadius: 1
 --- !u!114 &1038201195998472509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +237,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8188278775831297585, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769473650044062009, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
         type: 3}
       propertyPath: CharacterClass
@@ -233,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
         type: 3}
       propertyPath: startinglevel
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5860500606507880705, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b,
         type: 3}
@@ -304,7 +326,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 468317119384662259, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b2b0ffb14dbaf74d9fa99bee68ef53b, type: 3}
 --- !u!1 &4073587899184665432 stripped
 GameObject:
