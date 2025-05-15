@@ -34,9 +34,13 @@ namespace RPG.Stats
         //정식 빌드 시 주석 처리 필수
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (gameObject.CompareTag("Player"))
             {
-                currentLevel.value += 1;
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    currentLevel.value += 1;
+                    Debug.Log(gameObject.name + "레벨업");
+                }
             }
         }
 
@@ -140,6 +144,12 @@ namespace RPG.Stats
             }
 
             return penultimateLevel + 1;
+        }
+
+        public void SetLevel(int Level)
+        {
+            currentLevel.ForceInit();
+            currentLevel.value = Level;
         }
     }
 }
