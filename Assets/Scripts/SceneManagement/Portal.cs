@@ -1,4 +1,5 @@
 ﻿using RPG.Control;
+using RPG.Stage;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -31,6 +32,7 @@ namespace RPG.SceneManagement
 
         private IEnumerator Transition()
         {
+            NewStage CheckAllow = FindObjectOfType<NewStage>();
             if (sceneToLoad < 0)
             {
                 Debug.LogError("씬이 설정되지 않음");
@@ -38,7 +40,12 @@ namespace RPG.SceneManagement
             }
             //씬 불러오기, LoadScene(String)의 경우 씬 이름을 바꿀 때 코드도 같이 바꿔야 하는 번거로움이 있어
             //LoadScene(Index) 사용, Build Setting 설정으로 들어가 씬 인덱스 번호 확인 가능
-
+            else if (!CheckAllow.CheckEnemy()) //1번 Scene에 StageManager 오브젝트 생성 후 스크립트 삽입
+            {
+                Debug.Log("아직 경비명이 생존중");
+                yield break;
+            }
+            
             //씬 로드 전
             DontDestroyOnLoad(gameObject);
 
@@ -70,6 +77,9 @@ namespace RPG.SceneManagement
 
             newPlayerController.enabled = true;
             Destroy(gameObject);
+
+            Debug.Log("포탈 입장함");
+            //이 라인부터 NewStage 추가
         }
 
         private void UpdatePlayer(Portal otherPortal)

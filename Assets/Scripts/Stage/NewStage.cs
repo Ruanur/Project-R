@@ -9,16 +9,45 @@ namespace RPG.Stage
         //List<T>: 여러개의 오브젝트를 유동적으로 설정 가능
         [SerializeField] List<GameObject> spot;
 
-        // Start is called before the first frame update
-        void Start()
-        {
+        //TODO:
+        //1. 씬 내 경비병 생존 확인 or 포탈 입장 시 씬 리로드 -> 포탈 입장 시 리로드 하는 방식으로
+        //1-if : 경비병이 1명이라도 생존해있다면, 포탈 입장 불가, Portal.cs 수정
+        //2. 현재 플레이어 레벨에 맞게 경비병 재 소환
+        //일단 이렇게 작성 진행
 
-        }
-
-        // Update is called once per frame
+        //테스트용 함수, 경비병 생존 수 확인 
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                StageSet();
+            }
+        }
 
+        public void StageSet()
+        {
+            Debug.Log("남은 경비명 인원: " + CountEnemy());
+        }
+
+        public bool CheckEnemy()
+        {
+            if (CountEnemy() > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        //경비병 수 확인
+        public int CountEnemy()
+        {
+            GameObject[] ememies = GameObject.FindGameObjectsWithTag("Enemy");
+            int enemyCount = ememies.Length;
+
+            return enemyCount;
         }
     }
 }
