@@ -10,6 +10,7 @@ namespace RPG.Stage
     {
         [SerializeField] GameObject Guard = null;
         //플레이어의 스탯 정보를 가져오기 위함
+        const float spotPointRadius = 0.3f;
 
         BaseStats PlayerStats;
         void Awake()
@@ -17,10 +18,19 @@ namespace RPG.Stage
             PlayerStats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
         }
 
+        //Spot 위치 표시
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(transform.position, spotPointRadius);
+        }
+
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+
+                Debug.Log("스팟 스폰");
                 SpawnGuard();
             }
         }
@@ -40,7 +50,7 @@ namespace RPG.Stage
             {
                 guardStats.SetLevel(playerLevel);
             }
+            
         }
-
     }
 }

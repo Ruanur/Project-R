@@ -48,6 +48,31 @@ namespace RPG.Control
         private void Start()
         {
             guardPosition.ForceInit();
+            //PatrolPath 자동 지정, Spot 리스폰 시 필요
+            if (patrolPath == null)
+            {
+                patrolPath = FindClosestPatrolPath();
+            }
+        }
+
+        //PatrolPath가 없으면 제일 가까운 PatrolPath를 지정
+        PatrolPath FindClosestPatrolPath()
+        {
+            PatrolPath closestPath = null;
+            float closestDistance = 10f;
+
+            PatrolPath[] allPaths = FindObjectsOfType<PatrolPath>();
+
+            foreach (PatrolPath path in allPaths)
+            {
+                float distance = Vector3.Distance(transform.position, path.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestPath = path;
+                }
+            }
+            return closestPath;
         }
 
         //상태에 따라 한가지 동작 수행
