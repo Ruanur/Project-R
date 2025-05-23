@@ -25,18 +25,9 @@ namespace RPG.Stage
             Gizmos.DrawSphere(transform.position, spotPointRadius);
         }
 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-
-                Debug.Log("스팟 스폰");
-                SpawnGuard();
-            }
-        }
 
         //경비병 스폰 테스트, NewStage에서 호출 시 스폰되게 함수 변경 필요
-        private void SpawnGuard()
+        public void SpawnGuard()
         {
             //PlayerLevelGuard();
             //Debug.Log("실행됨");

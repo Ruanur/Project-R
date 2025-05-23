@@ -16,17 +16,23 @@ namespace RPG.Stage
         //일단 이렇게 구현 진행
 
         //테스트용 함수, 경비병 생존 수 확인 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.C))
-            {
-                StageSet();
-            }
-        }
-
+        //void Update()
+        //{
+        //    if (Input.GetKeyDown(KeyCode.C))
+        //    {
+        //        StageSet();
+        //    }
+        //}
         public void StageSet()
         {
+            Spot[] spots = FindObjectsOfType<Spot>();
             Debug.Log("남은 경비명 인원: " + CountEnemy());
+
+            foreach (Spot spot in spots)
+            {
+                spot.SpawnGuard();
+            }
+
         }
 
         public bool CheckEnemy()
