@@ -1,5 +1,6 @@
 ﻿using RPG.Attributes;
 using RPG.Control;
+using RPG.Movement;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -55,10 +56,15 @@ namespace RPG.Combat
             //distance : 플레이어와 픽업 아이템 거리, 너무 멀리 있을 때는 픽업이 안되게
             float distance = Vector3.Distance(transform.position, callingController.transform.position);
 
-            if (Input.GetMouseButtonDown(0) && distance <= 3)
+            if (Input.GetMouseButtonDown(1))
             {
-                Pickup(callingController.gameObject);
+                callingController.GetComponent<Mover>().StartMoveAction(transform.position, 1f);
             }
+
+            //if (Input.GetMouseButtonDown(0) && distance <= 3)
+            //{
+            //    Pickup(callingController.gameObject);
+            //}
             return true;
         }
 
