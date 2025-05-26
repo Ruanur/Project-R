@@ -18,6 +18,11 @@ namespace RPG.Stage
             PlayerStats = GameObject.FindWithTag("Player").GetComponent<BaseStats>();
         }
 
+        private void Start()
+        {
+            SpawnGuard();
+        }
+
         //Spot 위치 표시
         private void OnDrawGizmos()
         {

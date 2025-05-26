@@ -23,6 +23,7 @@ namespace RPG.Stage
         //        StageSet();
         //    }
         //}
+        
         public void StageSet()
         {
             Spot[] spots = FindObjectsOfType<Spot>();

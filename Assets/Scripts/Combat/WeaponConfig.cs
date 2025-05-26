@@ -70,9 +70,14 @@ namespace RPG.Combat
             return projectile != null;
         }
 
+        //투사체 발사
         public void LaunchProjectile(Transform rightHand, Transform leftHand, Health target, GameObject instigator, float calculatedDamage)
         {
-            Projectile projectileInstance = Instantiate(projectile, GetTransform(rightHand, leftHand).position, Quaternion.identity);
+            Projectile projectileInstance = Instantiate(
+                projectile, //설정한 투사체
+                GetTransform(rightHand, leftHand).position, //오른손, 왼손 위치
+                Quaternion.identity);
+
             projectileInstance.SetTarget(target, instigator, calculatedDamage);
         }
 

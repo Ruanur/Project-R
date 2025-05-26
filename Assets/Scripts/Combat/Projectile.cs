@@ -53,6 +53,8 @@ namespace RPG.Combat
             }
             return target.transform.position + Vector3.up * targetCapsule.height / 2;
         }
+        
+        //투사체 콜라이더에 닿을 때 실행
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<Health>() != target) { return; }
