@@ -154,10 +154,10 @@ namespace RPG.Control
             timeSinceLastSawPlayer = 0;
             fighter.Attack(player);
 
-            AggrevateNearbyEmemies();
+            AggrevateNearbyEnemies();
         }
 
-        private void AggrevateNearbyEmemies()
+        private void AggrevateNearbyEnemies()
         {
             RaycastHit[] hits = Physics.SphereCastAll(transform.position, shoutDistance, Vector3.up, 0);
             foreach (RaycastHit hit in hits)

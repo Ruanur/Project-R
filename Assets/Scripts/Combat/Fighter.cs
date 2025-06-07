@@ -109,7 +109,12 @@ namespace RPG.Combat
 
             if (currentWeaponConfig.HasProjectile())
             {
-                currentWeaponConfig.LaunchProjectile(RightHandTransform, LeftHandTransform, target, gameObject, damage);
+                currentWeaponConfig.LaunchProjectile(
+                    RightHandTransform, 
+                    LeftHandTransform, 
+                    target, 
+                    gameObject, 
+                    damage);
             }
             else
             {
