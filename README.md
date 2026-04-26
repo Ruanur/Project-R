@@ -11,8 +11,8 @@
 
 ## 배포 주소
 
-> **개발 버전** : [https://naver.me/FkLGyUaC] <br>
-> **빌드 버전(실행 파일)** : [https://naver.me/Fzsl51uK]<br>
+> **개발 버전** : [https://drive.google.com/file/d/1D_GbSKcQaN_yaxmNzFn1xBOc3ELkj9JS/view?usp=drive_link] <br>
+> **빌드 버전(실행 파일)** : [https://drive.google.com/file/d/1IRjGUxZFyUT1hTcm607eAw2_pQUankKu/view?usp=drive_link]<br>
 
 ## 개발팀 소개
 
